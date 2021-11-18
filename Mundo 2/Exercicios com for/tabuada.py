@@ -1,0 +1,1 @@
+'''Faça uma tabuada com o número que o usuario digitar'''
