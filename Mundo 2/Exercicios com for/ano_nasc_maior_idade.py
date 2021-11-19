@@ -1,28 +1,18 @@
 '''Crie um programa que leia o ano de nascimento de sete pessoas.
 No final, mostre quantas pessoas ainda não atigiram a maioridade e quantos já são maiores.'''
+from datetime import date
+ano = date.today().year
+cont_maior = 0
+cont_menor = 0
 
-print('Digite seu ano de nascimento: ')
-p1 = int(input())
-
-print('Digite seu ano de nascimento: ')
-p2 = int(input())
-
-print('Digite seu ano de nascimento: ')
-p3 = int(input())
-
-print('Digite seu ano de nascimento: ')
-p4 = int(input())
-
-print('Digite seu ano de nascimento: ')
-p5 = int(input())
-
-print('Digite seu ano de nascimento: ')
-p6 = int(input())
-
-print('Digite seu ano de nascimento: ')
-p7 = int(input())
-
-l = [p1, p2, p3, p4, p5, p6, p7]
-
-for i in range(l):
-    
+for i in range(1,8):
+    print('Digite seu ano de nascimento da {}ª PESSOA: '.format(i))
+    pessoa = int(input())
+    idade = ano - pessoa
+    if idade >= 21:
+        cont_maior+=1
+    else:
+        cont_menor+=1
+print('Ao todo tivemos {} pessoas maiores de idade'.format(cont_maior))
+print('-=-'*20)
+print('Ao todo tivemos {} pessoas menores de idade'.format(cont_menor))
