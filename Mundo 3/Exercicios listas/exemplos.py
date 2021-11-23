@@ -23,6 +23,21 @@ for c, v in enumerate(lista):#dessa forma mostra a posição e os valores da lis
 
 print('='*20, 'Colocando valores na lista', '='*20)
 
-valores = []
+'''valores = []
 for cont in range(0, 5):
     valores.append(int(input('Digite o valor: ')))
+print(f'Cheguei ao final: {valores}',end=' ')'''
+
+a = [2, 3, 4, 5]
+b = a
+b[2] = 8 #isso altera as duas listas, pois uma cria uma ligação com a outra
+print(f'Lista A: {a}')
+print(f'Lista B: {b}')
+
+print('='*20)
+#para copiar uma lista da outra devemos fazer:
+a = [2, 3, 4, 5]
+b = a[:]
+b[2] = 8 
+print(f'Lista A: {a}')
+print(f'Lista B: {b}')
