@@ -12,7 +12,7 @@ while True:
     resp = str(input('Deseja continuar [S/N]: ')).upper().strip()[0]
     if resp in 'Nn':
         break
-print(f'A lista lista ficou: {lista}')
-print('='*20)
+print(f'A lista ficou: {lista}')
+print('='*40)
 lista.sort()
 print(f'Em ordem crescente fica: {lista}')
