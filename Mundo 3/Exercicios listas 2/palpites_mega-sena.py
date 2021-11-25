@@ -2,6 +2,7 @@
 O programa vai perguntar quantos jogos serão gerados e vai sortear 6 números entre 1 e 60 para cada jogo,
 cadastrando tudo em uma lista composta.'''
 from random import randint
+from time import sleep
 lista = []
 jogos = []
 quant = int(input('Quantos jogos você quer fazer: '))
@@ -22,3 +23,4 @@ while total <= quant:
 
 for i, l in enumerate(jogos):
     print(f'Sorteando o {i+1}º jogo: {l}')
+    sleep(1)

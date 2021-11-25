@@ -1,24 +1,34 @@
 '''Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em uma lista composta.
 No final, mostre um boletim contendo a média de cada um e permita que o usuário possa 
 mostrar as notas de cada aluno individualmente.'''
-
-lista = []
+from time import sleep
+ficha = []
 boletim = []
 media = 0
 while True:
-    lista.append(str(input('Digite o nome: ')))
-    n1 = float(input('Digite a primeira nota: '))
-    n2 = float(input('Digite a segunda nota: '))
-    media = (n1+n2)/2
-    lista.append(n1)
-    lista.append(n2)
-    lista.append(media)
-    
-    boletim.append(lista[:])
-    lista.clear()
+    nome = str(input('Digite o nome: '))
+    nota1 = float(input('Nota 1: '))
+    nota2 = float(input('Nota 2: '))
+    media = (nota1 + nota2)/2
     resp = str(input('Deseja continuar [S/N]: ')).upper().strip()[0]
+    ficha.append([nome, [nota1, nota2], media])
     if resp in 'nN':
         break
-for i, l in enumerate(boletim):
-    print(f'O aluno {l[0]} tirou {l[1]}, e {l[2]}, media {l[3]}')
-    print('='*30)
+
+print('='*30)  
+print(f'{"Nº.":<4}{"NOME":<10}{"MÉDIA":>8}')
+print('-'*26)
+for i, l in enumerate(ficha):
+    print(f'{i:<4}{l[0]:<10}{l[2]:>8.1f}')
+
+while True:
+    print('-'*35)
+    op = int(input('Deseja que mostre a nota de qual aluno? (999 INTERROMPE): '))
+    if op == 999:
+        sleep(1)
+        print('Finalizando')
+        break
+    if op <= len(ficha) - 1:
+        print(f'Notas de {ficha[op][0]} são {ficha[op][1]}')
+print('<<<< VOLTE SEMPRE >>>>')
+sleep(1)
