@@ -19,7 +19,12 @@ while True:
     cont += 1
     soma += dados['idade']
     lista.append(dados.copy())
-    resp = str(input('Deseja continuar [S/N]: ')).upper().strip()[0]
+    while True:
+        resp = str(input('Deseja continuar [S/N]: ')).upper().strip()[0]
+        if resp not in 'nNsS':
+            print('Resposta inválida, digite apenas [S/N]')
+        else:
+            break
     if resp in 'nN':
         break
 #A) Quantas pessoas foram cadastradas
